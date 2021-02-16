@@ -13,7 +13,7 @@ The performance of the baseline Transformer model on the IWSLT 14 DE-EN translat
 ### Inference time comparison
 The experiment is to measure the total inference time of the baseline and the proposed attention modules on an input tensor of shape (sequence length, batchsize, hidden dimension), while batchsize is set 40, we vary the sequence length as {128, 256, 512, 1024, 2048}, and hidden dimension as {512, 768, 1024}. The numbers in the table are inference time in seconds.
 | Sequence length\$\alpha$$\beta$ | 512 | 768  |1024 |baseline  |
-| ------------- |:-------------:| :-----:|:-----:|:-----:|:-----:|
+| ------------- |:-------------:| :-----:|:-----:|:-----:|
 | 128        | 2.5553 | 1.9619 | 1.6746 | 3.9145 |
 | 256        | 5.3080 | 3.9689 | 3.3009 | 8.8856 |
 | 512        | 12.7100| 8.7503 | 6.8507 | 21.0929|

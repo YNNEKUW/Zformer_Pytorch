@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.nn import Parameter
 from einops import repeat, rearrange
 from quant_noise import quant_noise
 
@@ -12,7 +13,6 @@ class Zformer(nn.Module):
         num_heads,
         dropout=0.0,
         scalar=700.,
-        max_seq_len=280,
         bias=True,
         q_noise=0.0,
         qn_block_size=8,
@@ -22,7 +22,7 @@ class Zformer(nn.Module):
         self.input_dim = input_dim
         self.num_heads = num_heads
         self.dropout = dropout
-        self.scalar = scalar
+        self.scalar = Parameter(torch.tensor(scalar))
         self.eps = eps
         self.head_dim = input_dim // num_heads
         assert (

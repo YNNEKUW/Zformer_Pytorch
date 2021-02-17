@@ -14,6 +14,34 @@ The performance of the baseline Transformer model on the IWSLT 14 DE-EN translat
 The experiment is to measure the total inference time of the baseline and the proposed attention modules on an input tensor of shape (sequence length, batchsize, hidden dimension), while batchsize is set 40, we vary the sequence length as {128, 256, 512, 1024, 2048}, and hidden dimension as {512, 768, 1024}. The numbers in the table are inference time in seconds.
 
 For the baseline Transformer,
+| Sequence length \\ hidden dimension | 512 | 768  |
+| ------------- |:-------------:| :-----:|
+| 128        | 3.93 | 7.43 | 
+| 256        | 8.84 | 15.64 |
+| 512        | 21.06| 35.57 |
+| 1024       | 58.36| 90.31|
+| 2048       |200.35| 295.92|
+
+For Zformer, 
+| Sequence length \\ hidden dimension | 512 | 768  |
+| ------------- |:-------------:| :-----:|
+| 128        | 4.41 | 8.60 |
+| 256        | 8.74 | 16.66 |
+| 512        | 17.03| 32.96 |
+| 1024       | 33.45| 65.61|
+| 2048       | 66.60| 131.22|
+
+Speedup with respect to the baseline attention module:
+| Sequence length \\ hidden dimension | 512 | 768  |
+| ------------- |:-------------:| :-----:|
+| 128        | -12.21 % | -15.74 % |
+| 256        | 1.13 % | 6.52 % |
+| 512        | 19.13 %| 7.33 % |
+| 1024       | 42.68 %| 27.35 %|
+| 2048       | 66.76 %| 55.66 %|
+
+<!-- 
+For the baseline Transformer,
 | Sequence length \\ hidden dimension | 512 | 768  |1024 |
 | ------------- |:-------------:| :-----:|:-----:|
 | 128        | 3.93 | 7.43 | 11.39 |
@@ -30,6 +58,7 @@ For Zformer,
 | 512        | 17.03| 32.96 | 50.62 |
 | 1024       | 33.45| 65.61| 101.01|
 | 2048       | 66.60| 131.22| 203.67|
+-->
 ## Usage
 For using the Zformer attention module, first do
 ```

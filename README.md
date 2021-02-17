@@ -12,6 +12,7 @@ We keep the original attention operation while modifying the projection matrices
 The performance of the baseline Transformer model on the IWSLT 14 DE-EN translation task is 34.20 bleu score and our Zformer's performance is 30.34 bleu score while achieving substantial acceleration.
 ### Inference time comparison
 The experiment is to measure the total inference time of the baseline and the proposed attention modules on an input tensor of shape (sequence length, batchsize, hidden dimension), while batchsize is set 40, we vary the sequence length as {128, 256, 512, 1024, 2048}, and hidden dimension as {512, 768, 1024}. The numbers in the table are inference time in seconds.
+
 For the baseline Transformer,
 | Sequence length\\hidden dimension | 512 | 768  |1024 |
 | ------------- |:-------------:| :-----:|:-----:|

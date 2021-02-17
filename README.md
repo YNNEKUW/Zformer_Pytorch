@@ -54,7 +54,7 @@ length = 1024
 
 input_tensor = torch.ones((length, batch_size, hidden_dim)).cuda()
 
-# Xformer
+# Xformer attention module
 xformer_attn = Zformer(hidden_dim, n_heads).cuda()
 xformer_out = zformer_attn(input_tensor)
 

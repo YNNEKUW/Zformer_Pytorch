@@ -52,12 +52,15 @@ n_heads = 4
 batch_size = 40
 length = 1024
 
-baseline_attn = MultiheadAttention(hidden_dim, n_heads, self_attention=True).cuda()
-test_input = torch.ones((length, batch_size, hidden_dim)).cuda()
-dummy_out = baseline_attn(test_input, test_input, test_input)
+input_tensor = torch.ones((length, batch_size, hidden_dim)).cuda()
 
+# Xformer
 xformer_attn = Zformer(hidden_dim, n_heads).cuda()
-dummy_out = zformer_attn(test_input)
+xformer_out = zformer_attn(input_tensor)
+
+# Baseline attention module
+baseline_attn = MultiheadAttention(hidden_dim, n_heads, self_attention=True).cuda()
+baseline_out = baseline_attn(input_tensor, input_tensor, input_tensor)
 ```
 
 ## FAQ

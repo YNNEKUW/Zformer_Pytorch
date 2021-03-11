@@ -63,7 +63,7 @@ For Zformer,
 For using the Zformer attention module, first do
 ```
 git clone https://github.com/YNNEKUW/Zformer_Pytorch.git
-pip install -r Zformer_Pytorch/requirement.txt
+pip install -r Zformer_Pytorch/requirements.txt
 mv Zformer_Pytorch/zformer_pytorch .
 ```
 and then

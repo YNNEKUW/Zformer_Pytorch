@@ -9,7 +9,7 @@
 According to ([2009.06732](https://arxiv.org/abs/2009.06732)), many Transformer-based models by the name of -formers have been proprosed to improve the efficiency during inference, especially by means of reducing the inference time. The main focus of most -formers is the modification of the attention modules since the dot-product operation in an attention module makes the square computation bottleneck of a Transformer model. In this repository, we implement the Zformer attention module. The module has been made compatible with [fairseq](https://github.com/pytorch/fairseq).
 ### Zformer architecture
 We remove the softmax kernel for normalizing the attention logit to attention probabilities. Instead we simply divide the attention logit by a trainable scalar. Because the calculation of attention probabilities is now linear, the associative property is applicable and we dot-product KV first and then dot-product Q with the result.
-The performance of the baseline Transformer model on the IWSLT 14 DE-EN translation task is **34.20** bleu score and our Zformer's performance is **30.34** bleu score while achieving substantial acceleration.
+The performance of the baseline Transformer model on the IWSLT 14 DE-EN translation task is **34.41** bleu score and our Zformer's performance is **26.76** bleu score while achieving substantial acceleration.
 ### Inference time comparison
 The experiment is to measure the total inference time of the baseline and the proposed attention modules on an input tensor of shape (sequence length, batchsize, hidden dimension), while batchsize is set 40, we vary the sequence length as {128, 256, 512, 1024, 2048}, and hidden dimension as {512, 768, 1024}. The numbers in the table are inference time in seconds.
 

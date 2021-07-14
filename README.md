@@ -92,5 +92,3 @@ xformer_out = zformer_attn(input_tensor)
 baseline_attn = MultiheadAttention(hidden_dim, n_heads, self_attention=True).cuda()
 baseline_out = baseline_attn(input_tensor, input_tensor, input_tensor)
 ```
-
-## FAQ
